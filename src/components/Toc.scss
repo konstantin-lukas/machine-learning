@@ -1,0 +1,32 @@
+@import "vars";
+
+.openTocButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+#table-of-contents {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform .2s cubic-bezier(0,1.02,.45,1);
+  transform: translateX(-100%);
+  background: darken($dmMain, 3);
+  color: white;
+  &.open {
+    transform: translateX(0);
+  }
+  .closeTocButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  li {
+    list-style: inside;
+  ;
+  }
+}

@@ -1,7 +1,9 @@
 header {
+  padding: 50px;
   .toggle-button {
     cursor: pointer;
-    margin: 20px;
-    float: left;
+    position: fixed;
+    right: 20px;
+    top: 20px;
   }
 }

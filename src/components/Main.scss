@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  transition: margin-left .2s cubic-bezier(0,1.02,.45,1);
+  .wrapper {
+    width: 50%;
+    margin: auto;
+  }
+  &.toc-open {
+    margin-left: 20%;
+    .wrapper {
+      width: 75%;
+    }
+  }
+}

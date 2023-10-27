@@ -1,8 +1,9 @@
 import React from 'react';
 
-function Chapter({ children }: { children: React.ReactNode }) {
+function Chapter({ title, children }: { title: string, children: React.ReactNode }) {
     return (
-        <div className="chapter">
+        <div className="chapter" id={title.toLowerCase().replace(/\s/g,'-').replace(/[^\da-zA-Z\-]/g, '')}>
+            <h1>{title}</h1>
             {children}
         </div>
     );
