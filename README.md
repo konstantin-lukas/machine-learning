@@ -1,2 +1,2 @@
-# machine-learning
-This is a LaTeX document explaining fun™ machine learning concepts!
+# An Introduction to Machine Learning
+This is a website explaining fun™ machine learning concepts!

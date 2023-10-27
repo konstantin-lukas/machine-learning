@@ -1,0 +1,48 @@
+@import "vars";
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  color: $dmMain;
+  background: white;
+  .path {
+    stroke: rgba($dmMain, 0.5);
+    stroke-width: 3;
+  }
+  .node__root, .node__branch, .node__leaf {
+    fill: $dmMain;
+    stroke: $dmMain;
+    stroke-width: 3;
+    .rd3t-label__title {
+      fill: $dmMain;
+      font-weight: 400;
+    }
+    .rd3t-label__attributes {
+      fill: rgba($dmMain, 0.5);
+      font-weight: 400;
+    }
+  }
+  .node__leaf {
+    fill: white;
+  }
+  &.dark-mode {
+    background: $dmMain;
+    color: white;
+    .path {
+      stroke: rgba(255,255,255,0.5);
+    }
+    .node__root, .node__branch, .node__leaf {
+      fill: white;
+      stroke: white;
+      .rd3t-label__title {
+        fill: white;
+      }
+      .rd3t-label__attributes {
+        fill: rgba(255,255,255,0.5);
+      }
+    }
+    .node__leaf {
+      fill: $dmMain;
+    }
+  }
+}
