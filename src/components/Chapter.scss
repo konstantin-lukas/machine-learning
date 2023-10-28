@@ -1,0 +1,27 @@
+.chapter {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    margin-bottom: 3rem;
+    font-family: 'Crimson Text', serif;
+    text-align: left;
+  }
+  .chapter-decoration {
+    width: 3.5rem;
+    margin: 2rem 0;
+    .chapter-decoration-path {
+      fill: #282c34;
+    }
+  }
+}
+
+.dark-mode {
+  .chapter {
+    .chapter-decoration {
+      .chapter-decoration-path {
+        fill: white;
+      }
+    }
+  }
+}

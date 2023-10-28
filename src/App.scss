@@ -46,3 +46,21 @@
     }
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: darken($dmMain, 3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($dmMain, 20);
+  padding: 10px 0;
+}

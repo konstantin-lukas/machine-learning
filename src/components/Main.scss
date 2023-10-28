@@ -2,13 +2,11 @@ main {
   display: flex;
   transition: margin-left .2s cubic-bezier(0,1.02,.45,1);
   .wrapper {
-    width: 50%;
+    transition: width .2s cubic-bezier(0,1.02,.45,1);
+    width: 61.8%;
     margin: auto;
   }
   &.toc-open {
     margin-left: 20%;
-    .wrapper {
-      width: 75%;
-    }
   }
 }
