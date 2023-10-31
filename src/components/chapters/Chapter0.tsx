@@ -47,20 +47,42 @@ function Chapter0() {
     return (
         <Chapter title="An Introduction to Machine Learning">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aut beatae distinctio eligendi eos id in iure laboriosam minima, modi molestiae nihil pariatur porro possimus quos recusandae tenetur voluptas.
+                I have written this introduction to machine learning as a way for me to recall these concepts quickly.
+                However, I believe it can serve as a learning resource for anyone. You can find the source code of this
+                website on <a href="https://github.com/konstantin-lukas/machine-learning" target="_blank" rel="noreferrer">Github</a>.
+                Feel free to do with it whatever you want. There might be errors or incomplete bits in this text so if
+                you see anything funny, reporting these errors is much appreciated. This introduction covers basic machine
+                learning concepts, simple algorithms, and python programming.
             </p>
-            <div ref={treeWrapperRef} style={{
+            <p>
+                There are various types of machine learning. We will start with 3 basic types: classification, regression,
+                and clustering. Classification and regression are a type of machine learning called supervised learning.
+                Supervised means that our training data has labels. An example would be a bunch of images of animals
+                that have tags like 'cat' or 'dog' depending on what's shown in the image. When we do classification, we
+                are trying to learn an algorithm to classify things. To keep with the animal photo example for a moment,
+                we could teach our AI to take a photo of an animal as an input and return the name of the animal in that
+                picture.
+            </p>
+            <p>
+                Regression is another type of supervised learning where we try to predict a continuous value rather than
+                a class. An example of this would be trying to predict salaries based on job descriptions. This often works
+                similarly to classification, except that classification uses an activation function at the end to produce
+                a discrete value (a class).
+            </p>
+            <p>
+                Finally, there is clustering, which is a type of unsupervised learning. In unsupervised learning, we have
+                training data without labels. If we go back to our animal pictures, we would only have the pictures and
+                no tags that say the type of animal. With clustering, our AI would learn the classes to make predictions
+                from as opposed to just learn to classify things into categories specified by us. The classes learned
+                from clustering don't have to be simple categories like 'cat' or 'dog' and are often not as
+                obvious to humans. Depending on the parameters we use, we could end up just classifying cats and dogs but
+                animal photos could also be categorized by if they were taken inside or outside, or whether the animal
+                is looking at the camera, or any combination of the above. The point is, we can learn categories without
+                even caring about what they are.
+            </p>
+            <div className="figure-frame" ref={treeWrapperRef} style={{
                 width: '100%',
-                height: '30em',
-                border: 'rgba(255,255,255,0.5) 3px solid',
-                boxSizing: "border-box",
-                borderRadius: "20px",
-                overflow: "hidden"
+                height: '30em'
             }}>
                 <Tree
                     data={orgChartData}

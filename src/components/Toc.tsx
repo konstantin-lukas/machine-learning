@@ -45,6 +45,10 @@ function Toc({isTocOpen, setIsTocOpen, headings}: {
                         {listElements}
                     </ol>
                 </nav>
+                <footer id="footer">
+                    <a href="https://konstantinlukas.de/datenschutz">Privacy Policy</a>
+                    <a href="https://konstantinlukas.de/impressum">Legal Notice</a>
+                </footer>
             </aside>
         </>
     );

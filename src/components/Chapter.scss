@@ -1,11 +1,56 @@
+@import "vars";
+
 .chapter {
   h1 {
     font-size: 3rem;
   }
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
     font-family: 'Crimson Text', serif;
     text-align: left;
+    &:first-of-type::first-letter {
+      padding: .3rem .2rem .1rem .2rem;
+      margin: .15rem .2rem 0 0;
+      position: relative;
+      font-size: 4.8rem;
+      float: left;
+      line-height: .7;
+    }
+    @-moz-document url-prefix() {
+      &:first-of-type::first-letter {
+        padding: .2rem .2rem;
+        margin: .2rem .2rem 0 0;
+        line-height: 1;
+      }
+    }
+    a {
+      position: relative;
+      z-index: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: .1em;
+        width: 100%;
+        height: .5em;
+        background: lighten($dmMain, 55);
+        transition: height $bez;
+        z-index: -1;
+      }
+      &:hover::after {
+        height: 1em;
+      }
+    }
+  }
+  .figure-frame {
+    border: rgba($dmMain,0.5) 3px solid;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
   }
   .chapter-decoration {
     width: 3.5rem;
@@ -18,6 +63,16 @@
 
 .dark-mode {
   .chapter {
+    p {
+      a {
+        &::after {
+          background: lighten($dmMain, 20);
+        }
+      }
+    }
+    .figure-frame {
+      border: rgba(255,255,255,0.5) 3px solid;
+    }
     .chapter-decoration {
       .chapter-decoration-path {
         fill: white;

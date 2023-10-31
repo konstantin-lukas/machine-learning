@@ -2,8 +2,8 @@
 
 .openTocButton {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
   cursor: pointer;
 }
 #table-of-contents {
@@ -13,22 +13,47 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform .2s cubic-bezier(0,1.02,.45,1);
+  transition: transform $bez;
   transform: translateX(-100%);
   background: darken($dmMain, 3);
   color: white;
   overflow-y: auto;
+  #footer {
+    font-size: 16px;
+    margin-bottom: 1em;
+    a {
+      color: lighten($dmMain, 40);
+      font-weight: 600;
+      transition: color $bez;
+      &:hover {
+        color: white;
+      }
+      &:first-of-type {
+        margin-right: 2em;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    width: 100%;
+    height: 91px;
+    background: darken($dmMain, 7);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &.open {
     transform: translateX(0);
   }
   .closeTocButton {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
     cursor: pointer;
   }
   nav {
-    padding: 5rem 0;
+    padding: 6rem 0;
+    min-height: calc(100vh - 14rem);
     li {
       font-size: 16px;
       overflow: hidden;
@@ -38,6 +63,16 @@
       margin: 1em 0 0 1.5em;
       a:hover {
         color: lighten($dmMain, 50);
+      }
+    }
+    & > ol > li:first-of-type {
+      color: lighten($dmMain, 40);
+      text-transform: uppercase;
+      white-space: normal;
+      line-height: 1.5em;
+      font-weight: 600;
+      & a:hover {
+        color: white;
       }
     }
   }

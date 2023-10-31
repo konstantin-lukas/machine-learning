@@ -6,21 +6,27 @@ function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
         {
-            title: "An Introduction to Machine Learning",
+            title: "An Introduction to Machine Learning"
+        },
+        {
+          title: "Python Programming"
+        },
+        {
+            title: "Supervised Learning",
             children: [
                 {
-                    title: "Supervised Learning",
-                    children: [
-                        {
-                            title: "Classification",
-                        },
-                        {
-                            title: "Regression",
-                        }
-                    ]
+                    title: "Classification",
                 },
                 {
-                    title: "Unsupervised Learning",
+                    title: "Regression",
+                }
+            ]
+        },
+        {
+            title: "Unsupervised Learning",
+            children: [
+                {
+                    title: "Clustering",
                 }
             ]
         }
