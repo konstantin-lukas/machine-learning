@@ -1,14 +1,27 @@
 @import "vars";
 
 .chapter {
+  .katex {
+    line-height: 1;
+  }
+  &:not(:first-of-type) {
+    position: relative;
+    &::before {
+      content: "";
+      height: 1px;
+      background: lighten($dmMain, 60);
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -4.75rem;
+    }
+    margin-top: 10rem;
+  }
   h1 {
     font-size: 3rem;
   }
   p {
     margin-bottom: 1rem;
-    &:last-of-type {
-      margin-bottom: 3rem;
-    }
     font-family: 'Crimson Text', serif;
     text-align: left;
     &:first-of-type::first-letter {
@@ -51,6 +64,7 @@
     box-sizing: border-box;
     border-radius: 20px;
     overflow: hidden;
+    margin: 1.5rem 0;
   }
   .chapter-decoration {
     width: 3.5rem;
@@ -63,6 +77,11 @@
 
 .dark-mode {
   .chapter {
+    &:not(:first-of-type) {
+      &::before {
+        background: lighten($dmMain, 10);
+      }
+    }
     p {
       a {
         &::after {

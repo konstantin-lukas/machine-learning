@@ -1,7 +1,8 @@
 import React, {useState, useMemo} from 'react';
 import './Main.scss';
 import Toc, {TocItem} from "./Toc";
-import Chapter0 from "./chapters/Chapter0";
+import Introduction from "./chapters/Introduction";
+import NearestNeighbor from "./chapters/NearestNeighbor";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -16,6 +17,11 @@ function Main() {
             children: [
                 {
                     title: "Classification",
+                    children: [
+                        {
+                            title: "Nearest Neighbor"
+                        }
+                    ]
                 },
                 {
                     title: "Regression",
@@ -39,7 +45,8 @@ function Main() {
                 headings={headings}
             />
             <div className="wrapper">
-                <Chapter0/>
+                <Introduction/>
+                <NearestNeighbor/>
             </div>
         </main>
     );

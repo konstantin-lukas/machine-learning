@@ -1,8 +1,10 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
 import Tree from "react-d3-tree";
 import Chapter from "../Chapter";
+import 'katex/dist/katex.min.css'
+import Latex from 'react-latex-next'
 
-function Chapter0() {
+function Introduction() {
     const treeWrapperRef = useRef(null);
     const [treeWrapperSize, setTreeWrapperSize] = useState({x: 0, y: 0});
     useEffect(() => {
@@ -100,8 +102,34 @@ function Chapter0() {
                     hasInteractiveNodes={false}
                 />
             </div>
+            <p>
+                Before we get into the nitty-gritty, let's talk about some basic terms and notations. There are four
+                important terms for our data representation which you might already know from linear algebra. First,
+                we have scalars which are just numbers. Then we have vectors which are essentially arrays of scalars.
+                After that come matrices which are two-dimensional arrays of scalars. Anything with more dimensions, we
+                call tensors.
+                <Latex>
+                    {
+                        "$$\\underbrace{\\ 1\\in\\mathbb{R}}_{\\text{Scalar}}\\hspace{3em}" +
+                        "\\underbrace{\\begin{pmatrix}1\\\\ 2 \\end{pmatrix}\\in\\mathbb{R}^{2}}_{\\text{Vector}}\\hspace{3em}" +
+                        "\\underbrace{\\begin{pmatrix}1 & 2 & 3\\\\ 4 & 5 & 6 \\end{pmatrix}\\in\\mathbb{R}^{2\\times 3}}_{\\text{Matrix}}\\hspace{3em}" +
+                        "\\underbrace{\\ x\\in\\mathbb{R}^{2\\times 3\\times 4}}_{\\text{Tensor}}$$"
+                    }
+                </Latex>
+                Technically all of these are tensors and everything with two dimensions or fewer could be considered a matrix.
+                And of course, each vector is also a type of matrix and each scalar a type of vector.
+                It is just a matter of how we represent our data. An important convention about matrices however:
+                when we are looking at an element in <Latex>{"$\\mathbb{R}^{m\\times n}$"}</Latex> the first dimension <Latex>$m$</Latex> describes
+                the amount of rows in the matrix whereas <Latex>$n$</Latex> is the amount of columns.
+            </p>
+            <p>
+                We call the individual numbers in our tensors components. For a vector <Latex>$y$</Latex>, <Latex>$y_i$</Latex>
+                would be the i-th component from the top. For any matrix <Latex>$M$</Latex>, <Latex>{"$M_{ij}$"}</Latex> refers
+                to the component in the i-th row and the j-th column. We often represent data as vectors and linear
+                transformations as matrices. We notate the i-th sample from a dataset as <Latex>{"$x^{(i)}$"}</Latex>.
+            </p>
         </Chapter>
     );
 }
 
-export default Chapter0;
+export default Introduction;

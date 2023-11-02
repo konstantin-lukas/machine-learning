@@ -10,10 +10,13 @@
     "@types/node": "^16.18.59",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
+    "chartjs": "^0.3.24",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-d3-tree": "^3.6.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
+    "react-latex-next": "^2.2.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
