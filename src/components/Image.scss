@@ -1,8 +1,15 @@
+@import "../../vars";
+
 .image-container {
   width: 100%;
   img {
     width: 100%;
     user-select: none;
+    &.background-on-image {
+      background: white;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
   }
   & > span {
     width: 100%;
@@ -12,5 +19,10 @@
     margin-top: .5em;
     margin-bottom: 1rem;
     user-select: none;
+    a {
+      color: lighten($dmMain, 40);
+      text-align: right;
+      float: right;
+    }
   }
 }

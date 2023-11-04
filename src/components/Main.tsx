@@ -2,7 +2,6 @@ import React, {useState, useMemo} from 'react';
 import './Main.scss';
 import Toc, {TocItem} from "./Toc";
 import Introduction from "./chapters/Introduction";
-import PythonProgramming from "./chapters/PythonProgramming";
 import NearestNeighbor from "./chapters/NearestNeighbor";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
@@ -11,34 +10,17 @@ function Main() {
             title: "An Introduction to Machine Learning"
         },
         {
-          title: "Python Programming"
-        },
-        {
-            title: "Supervised Learning",
+            title: "Nearest Neighbor",
             children: [
                 {
-                    title: "Classification",
+                    title: "Distance Functions"
+                }, {
+                    title: "k-Nearest Neighbor",
                     children: [
                         {
-                            title: "Nearest Neighbor",
-                            children: [
-                                {
-                                    title: "Distance Functions"
-                                }
-                            ]
+                            title: "Cross Validation"
                         }
                     ]
-                },
-                {
-                    title: "Regression",
-                }
-            ]
-        },
-        {
-            title: "Unsupervised Learning",
-            children: [
-                {
-                    title: "Clustering",
                 }
             ]
         }
@@ -52,7 +34,6 @@ function Main() {
             />
             <div className="wrapper">
                 <Introduction/>
-                <PythonProgramming/>
                 <NearestNeighbor/>
             </div>
         </main>

@@ -1,6 +1,7 @@
 main {
   display: flex;
   transition: margin-left .2s cubic-bezier(0,1.02,.45,1);
+  padding-bottom: 10rem;
   .wrapper {
     transition: width .2s cubic-bezier(0,1.02,.45,1);
     width: 61.8%;

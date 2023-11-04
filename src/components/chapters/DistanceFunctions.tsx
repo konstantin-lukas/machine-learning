@@ -2,10 +2,12 @@ import React from 'react';
 import Chapter from "../Chapter";
 import Image from "../Image";
 import Latex from "react-latex-next";
+// @ts-ignore
+import img from "../../media/2DUnitBalls.svg";
 
 function DistanceFunctions() {
     return (
-        <Chapter title="Distance Functions">
+        <Chapter title="Distance Functions" depth={2}>
             <p>
                 In the above example we were looking at the direct distance between points. This is called euclidean distance.
                 There are however other ways we measure distance/similarity. We can generalize the euclidean distance to
@@ -28,15 +30,12 @@ function DistanceFunctions() {
                 from all points with a distance of one from the center.
             </p>
             <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/0/00/2D_unit_balls.svg"
+                src={img}
                 alt="An image showing unit circles for different Minkowski distances"
                 author="Waldyrious on Wikipedia"
+                license="CC BY-SA 3.0 Deed"
+                linkToLicense="https://creativecommons.org/licenses/by-sa/3.0/deed.en"
             />
-            <p>
-                Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-                Aliquam aut corporis debitis deserunt ducimus, et impedit inventore iure magni quo quod sint unde. Dolor eveniet ipsam officia rerum sequi voluptates?
-            </p>
         </Chapter>
     );
 }

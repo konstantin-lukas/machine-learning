@@ -47,7 +47,7 @@ function Introduction() {
         };
     }, []);
     return (
-        <Chapter title="An Introduction to Machine Learning">
+        <Chapter title="An Introduction to Machine Learning" depth={1}>
             <p>
                 I have written this introduction to machine learning as a way for me to recall these concepts quickly.
                 However, I believe it can serve as a learning resource for anyone. You can find the source code of this
