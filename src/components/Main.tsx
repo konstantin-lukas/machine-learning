@@ -2,6 +2,7 @@ import React, {useState, useMemo} from 'react';
 import './Main.scss';
 import Toc, {TocItem} from "./Toc";
 import Introduction from "./chapters/Introduction";
+import PythonProgramming from "./chapters/PythonProgramming";
 import NearestNeighbor from "./chapters/NearestNeighbor";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
@@ -19,7 +20,12 @@ function Main() {
                     title: "Classification",
                     children: [
                         {
-                            title: "Nearest Neighbor"
+                            title: "Nearest Neighbor",
+                            children: [
+                                {
+                                    title: "Distance Functions"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -46,6 +52,7 @@ function Main() {
             />
             <div className="wrapper">
                 <Introduction/>
+                <PythonProgramming/>
                 <NearestNeighbor/>
             </div>
         </main>

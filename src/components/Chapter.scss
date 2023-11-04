@@ -73,6 +73,25 @@
       fill: #282c34;
     }
   }
+  .chapter {
+    h1 {
+      font-size: 2rem;
+      text-align: left;
+      margin-top: 3rem;
+    }
+    p {
+      &:first-of-type::first-letter {
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+        float: none;
+        line-height: inherit;
+      }
+    }
+    .chapter-decoration {
+      display: none;
+    }
+  }
 }
 
 .dark-mode {
