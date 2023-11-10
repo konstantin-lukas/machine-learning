@@ -15,7 +15,7 @@ function CrossValidation() {
             </p>
             <Image
                 src={img}
-                author="MBanuelos22 on Wikipedia"
+                author="MBanuelos22 on Wikimedia"
                 alt="Illustration showing how data is split into folds for cross validation"
                 addBG={true}
                 license="CC BY-SA 4.0 Deed"

@@ -1,9 +1,9 @@
-import {Chart as ChartJS, LinearScale, PointElement} from "chart.js";
+import {Chart as ChartJS, LinearScale, PointElement, Tooltip} from "chart.js";
 import {Scatter} from "react-chartjs-2";
 import {options, optionsDarkMode} from "./options";
 import React, {useContext} from "react";
 import {DarkModeContext} from "../../../contexts";
-ChartJS.register(LinearScale, PointElement);
+ChartJS.register(LinearScale, PointElement, Tooltip);
 
 
 function NearestNeighborChart() {
@@ -68,6 +68,17 @@ function NearestNeighborChart() {
                 y: {
                     ...(darkMode ? optionsDarkMode : options).scales.y,
                     grace: "3%"
+                }
+            },
+            plugins: {
+                tooltip: {
+                    displayColors: false,
+                    padding: 10,
+                    callbacks: {
+                        label: function (context) {
+                            return context.formattedValue;
+                        }
+                    }
                 }
             }
         }}

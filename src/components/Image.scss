@@ -2,14 +2,20 @@
 
 .image-container {
   width: 100%;
-  img {
-    width: 100%;
-    user-select: none;
+  .inner-image-container {
+    overflow: hidden;
+    border-radius: 20px;
     &.background-on-image {
       background: white;
       padding: 2rem;
       box-sizing: border-box;
     }
+  }
+  img {
+    user-select: none;
+    max-height: 40vh;
+    max-width: 100%;
+    margin: auto;
   }
   & > span {
     width: 100%;

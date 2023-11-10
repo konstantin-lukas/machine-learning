@@ -1,6 +1,5 @@
 import React from "react";
 import "./Image.scss";
-// @ts-ignore
 
 function Image({src, author, alt, addBG, license, linkToLicense}: {
     src: any,
@@ -12,7 +11,9 @@ function Image({src, author, alt, addBG, license, linkToLicense}: {
 }) {
     return (
         <div className="image-container">
-            <img className={addBG ? " background-on-image" : ""} draggable={false} src={src} alt={alt}/>
+            <div className={addBG ? " background-on-image inner-image-container" : "inner-image-container"}>
+                <img draggable={false} src={src} alt={alt}/>
+            </div>
             <span>{author} <a href={linkToLicense}>{license}</a></span>
         </div>
     )

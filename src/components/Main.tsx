@@ -3,6 +3,7 @@ import './Main.scss';
 import Toc, {TocItem} from "./Toc";
 import Introduction from "./chapters/Introduction";
 import NearestNeighbor from "./chapters/NearestNeighbor";
+import LinearRegression from "./chapters/LinearRegression";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -23,7 +24,10 @@ function Main() {
                     ]
                 }
             ]
-        }
+        },
+        {
+            title: "Linear Regression"
+        },
     ], []);
     return (
         <main className={(isTocOpen ? "toc-open" : "")}>
@@ -35,6 +39,7 @@ function Main() {
             <div className="wrapper">
                 <Introduction/>
                 <NearestNeighbor/>
+                <LinearRegression/>
             </div>
         </main>
     );

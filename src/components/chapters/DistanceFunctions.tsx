@@ -32,7 +32,7 @@ function DistanceFunctions() {
             <Image
                 src={img}
                 alt="An image showing unit circles for different Minkowski distances"
-                author="Waldyrious on Wikipedia"
+                author="Waldyrious on Wikimedia"
                 license="CC BY-SA 3.0 Deed"
                 linkToLicense="https://creativecommons.org/licenses/by-sa/3.0/deed.en"
             />
