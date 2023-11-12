@@ -4,6 +4,7 @@ import Toc, {TocItem} from "./Toc";
 import Introduction from "./chapters/Introduction";
 import NearestNeighbor from "./chapters/NearestNeighbor";
 import LinearRegression from "./chapters/LinearRegression";
+import PythonProgramming from "./chapters/PythonProgramming";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -28,6 +29,14 @@ function Main() {
         {
             title: "Linear Regression"
         },
+        {
+            title: "Python Programming",
+            children: [
+                {
+                    title: "NumPy"
+                }
+            ]
+        },
     ], []);
     return (
         <main className={(isTocOpen ? "toc-open" : "")}>
@@ -40,6 +49,7 @@ function Main() {
                 <Introduction/>
                 <NearestNeighbor/>
                 <LinearRegression/>
+                <PythonProgramming/>
             </div>
         </main>
     );

@@ -3,12 +3,21 @@ import "./Image.scss";
 
 function Image({src, author, alt, addBG, license, linkToLicense}: {
     src: any,
-    author: string,
+    author?: string,
     alt: string,
     addBG?: boolean,
-    license: string,
-    linkToLicense: string
+    license?: string,
+    linkToLicense?: string
 }) {
+    if (!author || !license || !linkToLicense) {
+        return (
+            <div className="image-container">
+                <div className={addBG ? " background-on-image inner-image-container" : "inner-image-container"}>
+                    <img draggable={false} src={src} alt={alt}/>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className="image-container">
             <div className={addBG ? " background-on-image inner-image-container" : "inner-image-container"}>
@@ -16,7 +25,7 @@ function Image({src, author, alt, addBG, license, linkToLicense}: {
             </div>
             <span>{author} <a href={linkToLicense}>{license}</a></span>
         </div>
-    )
+    );
 }
 
 export default Image;

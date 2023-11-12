@@ -6,6 +6,9 @@ import img1 from "../../media/LinearRegression.svg";
 import img2 from "../../media/3DFunction.png";
 import Image from "../Image";
 import Latex from "react-latex-next";
+import Code from "../Code";
+// @ts-ignore
+import img3 from "../../media/FittedLine.png";
 function LinearRegression() {
     return (
         <Chapter title={"Linear Regression"} depth={1}>
@@ -112,7 +115,7 @@ function LinearRegression() {
             </Latex>
             <p>
                 This means, the function that is marked in blue in the example which is <Latex>{"$h_w(x)=\\frac{4}{3}x+\\frac{11}{3}$"}</Latex>
-                is almost perfect. It just needs to be adjusted every so slightly. We can see the difference by comparing the loss function values:
+                is almost perfect. It just needs to be adjusted ever so slightly. We can see the difference by comparing the loss function values:
             </p>
             <Latex>
                 {
@@ -154,6 +157,44 @@ function LinearRegression() {
             <Latex>
                 {"$$L(w_1,w_0)=\\frac{1}{2m}\\sum_{i=1}^m\\left(w_1x^{(i)}+w_0-y^{(i)}\\right)^2=\\frac{1}{2m}\\|Xw-y\\|^2$$"}
             </Latex>
+            <p>
+                Below we can see an implementation that calculates our weights and plots them together with the initially
+                suspected function.
+            </p>
+            <Code>
+                {
+                    "import numpy as np\n" +
+                    "import matplotlib.pyplot as plt\n" +
+                    "\n" +
+                    "if __name__ == '__main__':\n" +
+                    "    samplesX = np.array([1, 2, 3, 4])\n" +
+                    "    samplesY = np.array([6, 5, 7, 10])\n" +
+                    "\n" +
+                    "    # Create design matrix\n" +
+                    "    A = np.vstack([samplesX, np.ones(len(samplesX))]).T\n" +
+                    "\n" +
+                    "    # Compute the vector x that approximately solves the equation A @ x = samplesY\n" +
+                    "    # In this case this computes our weights\n" +
+                    "    m, c = np.linalg.lstsq(A, samplesY, rcond=None)[0]\n" +
+                    "\n" +
+                    "    # Plot samples\n" +
+                    "    plt.plot(samplesX, samplesY, 'o', label='Original data', markersize=10)\n" +
+                    "\n" +
+                    "    # Plot optimized linear function\n" +
+                    "    plt.plot(samplesX, m * samplesX + c, 'g', label='Fitted line')\n" +
+                    "\n" +
+                    "    # Plot original line\n" +
+                    "    plt.plot(samplesX, (4/3) * samplesX + (11/3), 'y', label='Initial prediction')\n" +
+                    "\n" +
+                    "    # Draw error\n" +
+                    "    for x, y in zip(samplesX, samplesY):\n" +
+                    "        plt.plot([x, x], [y, m * x + c], 'r--')\n" +
+                    "\n" +
+                    "    plt.legend()\n" +
+                    "    plt.savefig('FittedLine.png', dpi=300)\n"
+                }
+            </Code>
+            <Image src={img3} alt="Fitted line compared to orignal estimate" addBG={true}/>
         </Chapter>
     )
 }
