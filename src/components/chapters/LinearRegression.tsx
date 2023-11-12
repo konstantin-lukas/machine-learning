@@ -97,42 +97,41 @@ function LinearRegression() {
             </Latex>
             <Latex>
                 {
-                    "$$\\overline{x}=\\frac{1+2+3+4}{4}=2.25\\hspace{3em}\\overline{y}=\\frac{6+5+7+10}{4}=7$$"
+                    "$$\\overline{x}=\\frac{1+2+3+4}{4}=2.5\\hspace{3em}\\overline{y}=\\frac{6+5+7+10}{4}=7$$"
                 }
             </Latex>
             <Latex>
                 {
-                    "$$w_1=\\frac{(6-7)(1-2.25)+(5-7)(2-2.25)+(7-7)(3-2.25)+(10-7)(4-2.25)}{(1-2.25)^2+(2-2.25)^2+(3-2.25)^2+(4-2.25)^2}=\\frac{4}{3}$$"
+                    "$$w_1=\\frac{(6-7)(1-2.5)+(5-7)(2-2.5)+(7-7)(3-2.5)+(10-7)(4-2.5)}{(1-2.5)^2+(2-2.5)^2+(3-2.5)^2+(4-2.5)^2}=\\frac{7}{5}=1.4$$"
                 }
             </Latex>
             <Latex>
                 {
-                    "$$w_0=7-\\frac{4}{3}\\cdot 2.25=4$$"
+                    "$$w_0=7-1.4\\cdot 2.5=\\frac{7}{2}=3.5$$"
                 }
             </Latex>
             <p>
                 This means, the function that is marked in blue in the example which is <Latex>{"$h_w(x)=\\frac{4}{3}x+\\frac{11}{3}$"}</Latex>
-                is almost perfect. It just needs to be pushed a tiny bit upwards. The only difference is <Latex>$w_0$</Latex>.
-                Let's compare the loss function values:
+                is almost perfect. It just needs to be adjusted every so slightly. We can see the difference by comparing the loss function values:
             </p>
             <Latex>
                 {
                     "$$L\\left(\\frac{4}{3},\\frac{11}{3}\\right)=\\frac{" +
                     "\\left(\\frac{4}{3}\\cdot 1+\\frac{11}{3}-6\\right)^2+" +
-                    "\\left(\\frac{4}{3}\\cdot 2+\\frac{11}{3}-5\\right)^2" +
-                    "\\left(\\frac{4}{3}\\cdot 3+\\frac{11}{3}-7\\right)^2" +
-                    "\\left(\\frac{4}{3}\\cdot 4+\\frac{11}{3}-10\\right)^2" +
+                    "\\left(\\frac{4}{3}\\cdot 2+\\frac{11}{3}-5\\right)^2+" +
+                    "\\left(\\frac{4}{3}\\cdot 3+\\frac{11}{3}-7\\right)^2+" +
+                    "\\left(\\frac{4}{3}\\cdot 4+\\frac{11}{3}-10\\right)^2+" +
                     "}{8}=\\frac{19}{36}$$"
                 }
             </Latex>
             <Latex>
                 {
-                    "$$L\\left(\\frac{4}{3},\\frac{12}{3}\\right)=\\frac{" +
-                    "\\left(\\frac{4}{3}\\cdot 1+\\frac{12}{3}-6\\right)^2+" +
-                    "\\left(\\frac{4}{3}\\cdot 2+\\frac{12}{3}-5\\right)^2" +
-                    "\\left(\\frac{4}{3}\\cdot 3+\\frac{12}{3}-7\\right)^2" +
-                    "\\left(\\frac{4}{3}\\cdot 4+\\frac{12}{3}-10\\right)^2" +
-                    "}{8}=\\frac{7}{12}$$"
+                    "$$L\\left(\\frac{7}{5},\\frac{7}{2}\\right)=\\frac{" +
+                    "\\left(\\frac{7}{5}\\cdot 1+\\frac{7}{2}-6\\right)^2+" +
+                    "\\left(\\frac{7}{5}\\cdot 2+\\frac{7}{2}-5\\right)^2+" +
+                    "\\left(\\frac{7}{5}\\cdot 3+\\frac{7}{2}-7\\right)^2+" +
+                    "\\left(\\frac{7}{5}\\cdot 4+\\frac{7}{2}-10\\right)^2+" +
+                    "}{8}=\\frac{21}{40}$$"
                 }
             </Latex>
             <p>
