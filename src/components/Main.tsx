@@ -5,6 +5,7 @@ import Introduction from "./chapters/Introduction";
 import NearestNeighbor from "./chapters/NearestNeighbor";
 import LinearRegression from "./chapters/LinearRegression";
 import PythonProgramming from "./chapters/PythonProgramming";
+import PolynomialRegression from "./chapters/PolynomialRegression";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -35,6 +36,14 @@ function Main() {
             ]
         },
         {
+            title: "Polynomial Regression",
+            children: [
+                {
+                    title: "Regularization"
+                }
+            ]
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -54,6 +63,7 @@ function Main() {
                 <Introduction/>
                 <NearestNeighbor/>
                 <LinearRegression/>
+                <PolynomialRegression/>
                 <PythonProgramming/>
             </div>
         </main>

@@ -26,12 +26,14 @@ function MultivariateRegression() {
                 the vectors. Calculating the errors works very much in the same way except that you have to accumulate
                 the error of all dimensions per sample.
             </p>
-            <ol>
+            <ul style={{
+                textAlign: "left"
+            }}>
                 <li><Latex>$n$</Latex>: amount of features</li>
                 <li><Latex>$m$</Latex>: amount of samples</li>
                 <li><Latex>{"$x^{(i)}\\in\\mathbb{R}^{n+1}$"}</Latex>: i-th sample / feature vector</li>
                 <li><Latex>{"$y^{(i)}\\in\\mathbb{R}$"}</Latex>: value/label associated with i-th sample</li>
-            </ol>
+            </ul>
             <Latex>
                 {
                     "$$L_w(x)=\\frac{1}{2m}\\sum^m_{i=1}\\left(\\underbrace{(w\\cdot x^{(i)})}_{\\sum_{j=0}^nw_jx_j^{(i)}}" +
