@@ -27,7 +27,12 @@ function Main() {
             ]
         },
         {
-            title: "Linear Regression"
+            title: "Linear Regression",
+            children: [
+                {
+                    title: "Multivariate Regression"
+                }
+            ]
         },
         {
             title: "Python Programming",

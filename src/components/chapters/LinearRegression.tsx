@@ -9,6 +9,7 @@ import Latex from "react-latex-next";
 import Code from "../Code";
 // @ts-ignore
 import img3 from "../../media/FittedLine.png";
+import MultivariateRegression from "./MultivariateRegression";
 function LinearRegression() {
     return (
         <Chapter title={"Linear Regression"} depth={1}>
@@ -195,6 +196,7 @@ function LinearRegression() {
                 }
             </Code>
             <Image src={img3} alt="Fitted line compared to orignal estimate" addBG={true}/>
+            <MultivariateRegression/>
         </Chapter>
     )
 }
