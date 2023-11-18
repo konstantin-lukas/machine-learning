@@ -1,6 +1,7 @@
 import React from 'react';
 import Chapter from "../Chapter";
 import Latex from "react-latex-next";
+
 function MultivariateRegression() {
     return (
         <Chapter title={"Multivariate Regression"} depth={2}>
@@ -69,7 +70,7 @@ function MultivariateRegression() {
                 a pseudo-inverse matrix instead.
             </p>
         </Chapter>
-    )
+    );
 }
 
 export default MultivariateRegression;
