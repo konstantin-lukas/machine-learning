@@ -45,7 +45,12 @@ function Main() {
             ]
         },
         {
-            title: "Logistic Regression"
+            title: "Logistic Regression",
+            children: [
+                {
+                    title: "Gradient Descent"
+                }
+            ]
         },
         {
             title: "Python Programming",

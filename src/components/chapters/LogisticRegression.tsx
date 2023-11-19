@@ -4,7 +4,10 @@ import DecisionBoundaryChart from "./charts/DecisionBoundaryChart";
 import Image from "../Image";
 // @ts-ignore
 import img from "../../media/Sigmoid.png";
+// @ts-ignore
+import img2 from "../../media/Convex.png";
 import Latex from "react-latex-next";
+import GradientDescent from "./GradientDescent";
 
 function LogisticRegression() {
     return (
@@ -72,7 +75,64 @@ function LogisticRegression() {
             <p>
                 Now that we know how logistic regression works, let's talk about how to actually do the training.
                 The sigmoid function is static but we need to learn the weight vector in w from <Latex>$h_w(x)=\sigma(w\cdot x)$</Latex>.
+                What we're trying to maximize during training is the confidence of our predictions. This means that for
+                each sample with label 1, we are trying to maximize <Latex>$h_w(x)$</Latex> but for each sample with label 0
+                we are trying to maximize <Latex>$1-h_w(x)$</Latex>. This is because for samples labeled with 0 a certain
+                prediction is a prediction with a low value for <Latex>$h_w(x)$</Latex>. So our cost function could look like this:
             </p>
+            <Latex>
+                {
+                    "$$\\text{cost}_w(x,y)=\\left\\{\\begin{matrix}h_w(x),&y=1\\\\ 1-h_w(x),& y=0\\end{matrix}\\right.$$"
+                }
+            </Latex>
+            <p>
+                And the resulting loss function would be:
+            </p>
+            <Latex>
+                {
+                    "$$L(w)=\\prod^m_{i=1}\\text{cost}_w(x^{(i)},y^{(i)})$$"
+                }
+            </Latex>
+            <p>
+                This loss function is nice because it results in a value between 0 and 1 but it is not so nice because we
+                have to do a lot of complicated multiplication. Luckily there's a trick we can use. We can turn our product
+                into a sum using this logarithm rule: <Latex>$\ln(AB)=\ln(A)+\ln(B)$</Latex>. We call this maximum likelihood method.
+                Here's what that looks like:
+            </p>
+            <Latex>
+                {
+                    "$$L(w)=\\frac{1}{m}\\ln\\left(\\prod^m_{i=1}\\text{cost}_w(x^{(i)},y^{(i)})\\right)=" +
+                    "\\frac{1}{m}\\sum^m_{i=1}\\ln\\left(\\text{cost}_w(x^{(i)},y^{(i)})\\right)$$"
+                }
+            </Latex>
+            <p>
+                Because of the logarithm we introduced, our loss function gives us values in <Latex>$(-\infty,0]$</Latex>.
+                This is why we need to do one more thing, which is multiplying our result with negative one. What we get is
+                a convex parabola with one optimum which we can minimize. Our final loss function looks like this:
+            </p>
+            <Latex>
+                {
+                    "$$L(W)=-\\frac{1}{m}\\sum^m_{i=1}\\ln\\left(\\text{cost}_w(x^{(i)},y^{(i)})\\right)=" +
+                    "\\underbrace{-\\frac{1}{m}\\sum^m_{i=1}y^{(i)}\\cdot\\ln(h_w(x))+(1-y^{(i)})\\cdot\\ln(1-h_w(x))}" +
+                    "_\\text{Combined form used for gradient descent}$$"
+                }
+            </Latex>
+            <p>
+                Here's a quick image illustrating what it means for a function to be convex:
+            </p>
+            <Image
+                src={img2}
+                author="Sam Lau, Joey Gonzalez, and Deb Nolan"
+                license="CC BY-NC-ND 4.0 Deed"
+                linkToLicense="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en"
+                alt="a convex and a non-convex function"
+                addBG={true}
+            />
+            <p>
+                Unfortunately, there's still bad news because unlike before there is no closed form solution for this loss
+                function. We can however find the minimum in a different way which is called gradient descent.
+            </p>
+            <GradientDescent/>
         </Chapter>
     )
 }
