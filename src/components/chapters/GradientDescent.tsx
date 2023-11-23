@@ -150,6 +150,20 @@ function GradientDescent() {
                     "$$x_{j_\\text{(scaled)}}=\\frac{x_j-\\min(x_j)}{\\max(x_j)-\\min(x_j)}$$"
                 }
             </Latex>
+            <p>
+                Let's talk about the cost of using the gradient descent method. Every time we update our weights, we have
+                to calculate the cost over all data points. For large datasets this process can become very slow. That's
+                why there are alternative ways to do this. A very simply one is the stochastic gradient descent. It's
+                basically the same as our regular gradient descent algorithm except that we chose a single random data point
+                during each epoch to calculate the cost for. So while that approach is very fast and scalable, it is not
+                optimal and can result in a lot of jumping around in the loss landscape.
+            </p>
+            <p>
+                There's also some middle ground between the stochastic and regular gradient descent algorithms where you
+                take small data batches during each epoch instead of just a single point or the whole dataset. This approach,
+                which is called mini-batch gradient descent,  is often used in practice because it makes the gradient descent
+                algorithm usable on large datasets.
+            </p>
         </Chapter>
     );
 }
