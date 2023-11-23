@@ -8,6 +8,7 @@ import PythonProgramming from "./chapters/PythonProgramming";
 import PolynomialRegression from "./chapters/PolynomialRegression";
 import LogisticRegression from "./chapters/LogisticRegression";
 import NaiveBayes from "./chapters/NaiveBayes";
+import ErrorMetrics from "./chapters/ErrorMetrics";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -57,6 +58,9 @@ function Main() {
             title: "Naive Bayes"
         },
         {
+            title: "Error Metrics"
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -79,6 +83,7 @@ function Main() {
                 <PolynomialRegression/>
                 <LogisticRegression/>
                 <NaiveBayes/>
+                <ErrorMetrics/>
                 <PythonProgramming/>
             </div>
         </main>
