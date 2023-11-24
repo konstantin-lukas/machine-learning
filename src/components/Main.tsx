@@ -9,6 +9,7 @@ import PolynomialRegression from "./chapters/PolynomialRegression";
 import LogisticRegression from "./chapters/LogisticRegression";
 import NaiveBayes from "./chapters/NaiveBayes";
 import ErrorMetrics from "./chapters/ErrorMetrics";
+import Perceptron from "./chapters/Perceptron";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -61,6 +62,14 @@ function Main() {
             title: "Error Metrics"
         },
         {
+            title: "Perceptron",
+            children: [
+                {
+                    title: "Support Vector Machine"
+                }
+            ]
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -84,6 +93,7 @@ function Main() {
                 <LogisticRegression/>
                 <NaiveBayes/>
                 <ErrorMetrics/>
+                <Perceptron/>
                 <PythonProgramming/>
             </div>
         </main>
