@@ -20,8 +20,9 @@ function MulticlassClassification() {
                 The One-vs-Rest approach changes the way we look at our input data and uses the same linear models as before.
                 This results in our model learning a set of k individual linear boundaries.
                 Alternatively, we can change the way our model works which is the second approach we're going to cover here.
-                Instead of learning k individual function we can learn the parameters of those functions in one model.
-                This also means we need to introduce a new model with a new loss function and weight vector.
+                Instead of learning k individual functions we can learn the parameters of those functions in one model.
+                The downside to that is that we have to adjust our model completely and can't use our binary classifiers
+                the way they are, but we do get a more efficient implementation.
             </p>
         </Chapter>
     );
