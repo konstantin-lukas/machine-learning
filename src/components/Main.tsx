@@ -10,6 +10,7 @@ import LogisticRegression from "./chapters/LogisticRegression";
 import NaiveBayes from "./chapters/NaiveBayes";
 import ErrorMetrics from "./chapters/ErrorMetrics";
 import Perceptron from "./chapters/Perceptron";
+import MulticlassClassification from "./chapters/MulticlassClassification";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -70,6 +71,9 @@ function Main() {
             ]
         },
         {
+            title: "Multiclass Classification"
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -94,6 +98,7 @@ function Main() {
                 <NaiveBayes/>
                 <ErrorMetrics/>
                 <Perceptron/>
+                <MulticlassClassification/>
                 <PythonProgramming/>
             </div>
         </main>
