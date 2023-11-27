@@ -11,6 +11,7 @@ import NaiveBayes from "./chapters/NaiveBayes";
 import ErrorMetrics from "./chapters/ErrorMetrics";
 import Perceptron from "./chapters/Perceptron";
 import MulticlassClassification from "./chapters/MulticlassClassification";
+import DecisionTrees from "./chapters/DecisionTrees";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -77,6 +78,9 @@ function Main() {
             title: "Multiclass Classification"
         },
         {
+            title: "Decision Trees"
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -102,6 +106,7 @@ function Main() {
                 <ErrorMetrics/>
                 <Perceptron/>
                 <MulticlassClassification/>
+                <DecisionTrees/>
                 <PythonProgramming/>
             </div>
         </main>
