@@ -3,6 +3,7 @@ import Chapter from "../Chapter";
 import Latex from "react-latex-next";
 import PolynomialRegressionChart from "./charts/PolynomialRegressionChart";
 import Regularization from "./Regularization";
+import KernelMethod from "./KernelMethod";
 function PolynomialRegression() {
     return (
         <Chapter title={"Polynomial Regression"} depth={1}>
@@ -50,6 +51,7 @@ function PolynomialRegression() {
                 hyper-parameter of the k-NN classifier, i.e. with cross validation.
             </p>
             <Regularization/>
+            <KernelMethod/>
         </Chapter>
     )
 }

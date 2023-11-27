@@ -45,6 +45,9 @@ function Main() {
             children: [
                 {
                     title: "Regularization"
+                },
+                {
+                    title: "Kernel Method"
                 }
             ]
         },
