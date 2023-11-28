@@ -73,7 +73,10 @@ function Main() {
             children: [
                 {
                     title: "Support Vector Machine"
-                }
+                },
+                {
+                    title: "Neural Networks"
+                },
             ]
         },
         {

@@ -6,6 +6,7 @@ import img from "../../media/Perceptron.png";
 import Image from "../Image";
 import Code from "../Code";
 import SupportVectorMachine from "./SupportVectorMachine";
+import NeuralNetworks from "./NeuralNetworks";
 
 function Perceptron() {
     return (
@@ -60,6 +61,7 @@ function Perceptron() {
                 Linearly separable just means that the two classes can be perfectly separated by a straight line.
             </p>
             <SupportVectorMachine/>
+            <NeuralNetworks/>
         </Chapter>
     );
 }
