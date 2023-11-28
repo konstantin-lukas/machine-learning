@@ -35,23 +35,38 @@ function Ensembles() {
                     during training to avoid giving high weights to models that over-fit.
                 </li>
                 <li>
-                    Boosting:<br/>We learn predictors sequentially in an adaptive way (like a pipeline) and combine them with averaging or majority voting.
-                    This reduces bias (good for linear models or shallow decision trees).
-                </li>
-                <li>
                     Bagging:<br/>We learn predictors separately and combine them by averaging or by majority vote. This reduces variance
                     (good for deep decision trees or RBF SVM). Bagging happens in two steps: bootstrapping and aggregation.
                     During bootstrapping we divide our full dataset into many bootstrap samples which are created through
                     sampling with replacement, meaning a bootstrap sample can contain the same sample more than once.
                     During aggregation we just take our predictions and combine them by majority for classifiers or by
-                    averaging for regressors.
+                    averaging for regressors. When we use bagging, a common problem is that we learn very similar classifiers when we have a lot of data.
+                    Random forest offer a solution by deciding node splits based on a subset of available features. A random
+                    forest is a bunch of bagged decision trees that each use random subsets of our features. So instead of just using
+                    a random subset of samples, we are also using a random subset of features.
+                </li>
+                <li>
+                    Boosting:<br/>We learn predictors sequentially in an adaptive way (like a pipeline) and combine them with averaging or majority voting.
+                    This reduces bias (good for linear models or shallow decision trees). Each learner focuses on improving
+                    the samples that the previous learner got wrong. One type of boosting we can do is called gradient boosting. This consists of a loss function, a weak learner
+                    (in this case decision trees) and an additive model to add weak learners to minimize the loss. Another approach
+                    is adaptive boosting (AdaBoost) where we give the samples in our dataset weights and reweigh them to emphasize
+                    samples our weak learner got wrong. The rest of the process is the same, except that we adjust the sample
+                    weights after each weak learner.
                 </li>
             </ol>
             <p>
-                When we use bagging, a common problem is we learn very similar classifiers when we have a lot of data.
-                Random forest offer a solution by deciding node splits based on a subset of available features. A random
-                forest is a bunch of bagged decision trees that each use random subsets of our features. So instead of just using
-                a random subset of samples, we are also using a random subset of features.
+                Ensembles can produce quite complicated decision boundaries. With the plethora of data everyone collects
+                these days, this isn't unique to ensembles. Most models become very complex either because of the model
+                itself or because of the amount of features. It's no wonder that it is often impossible to tell how a model
+                makes decisions. That's why we are using a trick to explain our models more easily by only looking at the
+                space around our prediction. Even very complex decision boundaries can look simple of you zoom in far enough.
+            </p>
+            <p>
+                The approach we use, is called Lime. We get a black box model and a prediction x we would like to explain.
+                We weigh our dataset based on the proximity to our prediction x. We take the closest predictions to x
+                and train an explainable weighted model on these predictions and the associated data points. Linear models
+                or decision tree make for good explainers.
             </p>
         </Chapter>
     );

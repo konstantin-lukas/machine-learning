@@ -13,6 +13,7 @@ import Perceptron from "./chapters/Perceptron";
 import MulticlassClassification from "./chapters/MulticlassClassification";
 import DecisionTrees from "./chapters/DecisionTrees";
 import Ensembles from "./chapters/Ensembles";
+import Clustering from "./chapters/Clustering";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -85,6 +86,17 @@ function Main() {
             title: "Ensembles"
         },
         {
+            title: "Clustering",
+            children: [
+                {
+                    title: "K-Means"
+                },
+                {
+                    title: "Hierarchical Clustering"
+                }
+            ]
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -112,6 +124,7 @@ function Main() {
                 <MulticlassClassification/>
                 <DecisionTrees/>
                 <Ensembles/>
+                <Clustering/>
                 <PythonProgramming/>
             </div>
         </main>
