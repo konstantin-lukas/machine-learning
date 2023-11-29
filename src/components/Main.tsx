@@ -14,6 +14,7 @@ import MulticlassClassification from "./chapters/MulticlassClassification";
 import DecisionTrees from "./chapters/DecisionTrees";
 import Ensembles from "./chapters/Ensembles";
 import Clustering from "./chapters/Clustering";
+import TimeSeries from "./TimeSeries";
 function Main() {
     const [isTocOpen, setIsTocOpen] = useState(true);
     const headings = useMemo<TocItem[]>(() => [
@@ -100,6 +101,14 @@ function Main() {
             ]
         },
         {
+            title: "Time Series",
+            children: [
+                {
+                    title: "Time Series Classification"
+                }
+            ]
+        },
+        {
             title: "Python Programming",
             children: [
                 {
@@ -128,6 +137,7 @@ function Main() {
                 <DecisionTrees/>
                 <Ensembles/>
                 <Clustering/>
+                <TimeSeries/>
                 <PythonProgramming/>
             </div>
         </main>
