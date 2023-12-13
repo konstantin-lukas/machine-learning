@@ -1,5 +1,6 @@
 {
   "name": "machine-learning",
+  "homepage": "https://konstantin-lukas.github.io/machine-learning",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
