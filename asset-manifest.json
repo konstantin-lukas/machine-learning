@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/machine-learning/static/css/main.4d62db90.css",
+    "main.css": "/machine-learning/static/css/main.5321e511.css",
     "main.js": "/machine-learning/static/js/main.ff39ace7.js",
     "static/media/3DFunction.png": "/machine-learning/static/media/3DFunction.06ee6b86bc6133a7e689.png",
     "static/media/KMeans.gif": "/machine-learning/static/media/KMeans.69f8a920e0c1e67ba776.gif",
@@ -81,11 +81,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/machine-learning/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/machine-learning/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/machine-learning/index.html",
-    "main.4d62db90.css.map": "/machine-learning/static/css/main.4d62db90.css.map",
+    "main.5321e511.css.map": "/machine-learning/static/css/main.5321e511.css.map",
     "main.ff39ace7.js.map": "/machine-learning/static/js/main.ff39ace7.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d62db90.css",
+    "static/css/main.5321e511.css",
     "static/js/main.ff39ace7.js"
   ]
 }
